@@ -1,0 +1,19 @@
+{
+  "name": "@perezmarc/vuemarc-ui-kit",
+  "version": "2.0.0",
+  "description": "Reusable kit of inputs",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marc Pérez",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Perezmarc/vuemarc-ui-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Perezmarc/vuemarc-ui-kit/issues"
+  },
+  "homepage": "https://github.com/Perezmarc/vuemarc-ui-kit#readme"
+}
