@@ -1,0 +1,149 @@
+// Overrides default styling
+input
+  outline 0
+
+  &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active
+    -webkit-transition border $transition-standard .3s, color $transition-standard .3s, background-color 99999s, -webkit-text-fill-color 99999s !important
+
+textarea:not(.resize)
+  resize none
+
+// Custom styling
+.v-input
+  color $color-grey--darken-2
+  display flex
+  flex-direction column
+
+  .v-input__slot
+    position relative
+    display flex
+    flex-direction column
+
+    label
+      position absolute
+      padding 15px 0px
+      width 100%
+      height 100%
+      transform translateY(0)
+      transition $transition-decelerate .5s
+      font-size 1.1rem
+      color $color-grey--lighten-1
+      opacity 1
+      display flex
+      align-items center
+      user-select none
+
+    input, textarea, .v-input__slot__input
+      outline none
+      z-index 2
+      padding 20px 0px 5px 0px
+      font-size 1.1rem
+      line-height 1rem
+      border none
+      border-bottom solid 1px $color-grey--lighten-3
+      color inherit
+      background transparent
+      transition $transition-standard .3s
+      display flex
+      align-items center
+      font-family $font-body
+
+  &.view-field
+    .v-input__slot
+      input, textarea, .v-input__slot__input
+        color $color-grey--darken-2
+        border-bottom 1px solid transparent !important
+
+  &:not(.view-field)
+    .v-input__slot
+      input, textarea, .v-input__slot__input
+        &:active, &:focus
+          color $color-primary
+          border-color $color-primary
+          transition $transition-standard .3s
+
+        &[disabled], &.disabled
+          color $color-grey--lighten-2
+          -webkit-text-fill-color $color-grey--lighten-2
+
+  &.v-input--focused, &.v-input--typed
+    label
+      opacity 1
+      font-size .9rem
+      transform translateY(-18px)
+      transition $transition-decelerate .2s
+
+  &.active
+    .v-input__slot__input
+      color $color-primary
+      border-color $color-primary
+      transition $transition-standard .3s
+
+  &.error
+    animation error .5s ease-in-out
+
+    .v-input__slot
+      input, textarea
+        color $color-error
+        border-color $color-error
+
+  .v-input__errors
+    margin-top 5px
+    color $color-error
+    min-height 1rem
+    order 1
+
+    .v-input__errors-content
+      opacity 0
+      transform translateY(-1rem)
+      transition $transition-decelerate .3s
+
+    .v-input__errors-content.active
+      opacity 1
+      transform translateY(0rem)
+
+.v-input.v-input--filled
+  .v-input__slot
+    background #fff
+    border-radius $border-radius-standard
+
+  label
+    padding 15px 12px
+
+  input, textarea, .v-input__slot__input
+    padding 27px 12px 7px 12px
+    border-radius $border-radius-standard
+    border solid 1px $color-grey--lighten-3
+
+.v-input-appended-icon, .v-input-appended-icon.v-input .v-input__slot
+  input
+    padding-right 1.8rem
+
+  .appended-icon
+    position absolute
+    right 0
+    bottom 0
+    padding 5px 0 5px 5px
+    line-height 1rem
+    font-size 1.1rem
+    cursor pointer
+    z-index 5
+
+@keyframes error
+  0%
+    transform translateX(5px)
+
+  15%
+    transform translateX(-5px)
+
+  30%
+    transform translateX(5px)
+
+  45%
+    transform translateX(-5px)
+
+  60%
+    transform translateX(5px)
+
+  75%
+    transform translateX(0px)

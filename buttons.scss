@@ -1,0 +1,94 @@
+// Overrides default styling
+button
+  outline 0
+
+// Custom styling
+// Main classes
+.v-button
+  padding: 13px 25px
+  border-radius: $radius-md
+  font-family: $font-bold
+  border: 2px solid $color-primary
+  outline: none
+  font-size: 1rem
+  cursor: pointer
+  transition: 0.3s
+  background-color: $color-primary
+  color: #ffffff
+  transition $transition-standard 0.3s
+
+  &:not([disabled]):hover
+    background-color: darken($color-primary, 7%)
+    transition $transition-standard 0.3s
+
+  // Modification classes
+  &.full-width
+    width 100%
+  
+  &.small
+    font-size: 13px
+    padding: 10px 20px
+
+  &.large
+    padding 15px 30px
+
+  &.v-button-icon
+    font-size 18px
+    line-height 1
+    padding 0.5em
+    border-radius 2em
+    box-sizing content-box
+
+  &.v-button-flat
+    color $color-grey--lighten-1
+    background none
+    border 0
+
+    &:hover
+      background alpha($color-grey--lighten-1, 0.2)
+
+  &.v-button-link
+    color $color-primary
+    background none
+    border 0
+
+    &:hover
+      background none
+
+  &.v-button-outline
+    color $color-primary
+    border 2px solid
+    background none
+    
+    &:not([disabled]):hover
+      background alpha($color-primary, 0.1)
+
+    &.loading
+      border-color $color-primary
+      .v-button__slot
+        &:after
+          border-color alpha($color-primary, 0.5)
+          border-top-color $color-primary
+
+  &.transparent
+    background transparent
+    border-color transparent
+    color $color-primary
+    &:hover
+      background transparent
+
+  // Behaviour classes
+  &[disabled]
+    opacity 0.6
+    cursor default
+
+  &.loading
+    color transparent
+
+    .v-button__slot
+      position relative
+
+      &:after
+        content ''
+        position absolute
+        {spinner}

@@ -49,3 +49,5 @@ import VModal from "./modals/VModal.vue";
 Vue.component("v-modal", VModal);
 import VFlashNotice from "./modals/VFlashNotice.vue";
 Vue.component("v-flash-notice", VFlashNotice);
+
+import "./*.styl";
