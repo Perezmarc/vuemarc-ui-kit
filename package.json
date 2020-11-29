@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Perezmarc/vuemarc-ui-kit/issues"
   },
-  "homepage": "https://github.com/Perezmarc/vuemarc-ui-kit#readme"
+  "homepage": "https://github.com/Perezmarc/vuemarc-ui-kit#readme",
+  "dependencies": {
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.2",
+    "vue-click-outside": "^1.0.7",
+    "webrtc-adapter": "^7.5.1"
+  }
 }

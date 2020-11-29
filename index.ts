@@ -43,3 +43,9 @@ Vue.component("v-steps", VSteps);
 
 import VStep from "./navigation/VStep.vue";
 Vue.component("v-step", VStep);
+
+// Modals
+import VModal from "./modals/VModal.vue";
+Vue.component("v-modal", VModal);
+import VFlashNotice from "./modals/VFlashNotice.vue";
+Vue.component("v-flash-notice", VFlashNotice);
